@@ -12,6 +12,14 @@ interface CardDisplayProps {
   isFavorite: (city: string) => boolean;
 }
 
+function EmptyState() {
+  return (
+    <div className="text-center text-gray-500 mt-10">
+      <p>🔍 Busque uma cidade para ver o clima</p>
+    </div>
+  );
+}
+
 export default function CardDisplay({
   error,
   isLoading,
@@ -22,6 +30,8 @@ export default function CardDisplay({
   if (isLoading) return <LoadingSkeleton />;
 
   if (error) return <ErrorMessage error={error} />;
+
+  if (!weather) return <EmptyState />;
 
   if (weather)
     return (
