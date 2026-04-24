@@ -18,18 +18,18 @@ export default function WeatherCard({
           <h2 className="text-2xl font-semibold text-gray-800">{data.name}</h2>
         </div>
 
+        <img
+          src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+          alt={data.weather[0].description}
+          className="w-16 h-16"
+        />
+
         <button
           onClick={() => onToggleFavorite(data.name)}
           className="text-2xl transition-transform hover:scale-110"
         >
           {isFavorite ? "⭐" : "☆"}
         </button>
-
-        <img
-          src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-          alt={data.weather[0].description}
-          className="w-16 h-16"
-        />
       </div>
 
       <div className="flex items-center justify-between mb-6">
