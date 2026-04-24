@@ -2,16 +2,28 @@ import type { WeatherData } from "../types";
 
 interface WeatherCardProps {
   data: WeatherData;
+  onToggleFavorite: (city: string) => void;
+  isFavorite: boolean;
 }
 
-export default function WeatherCard({ data }: WeatherCardProps) {
+export default function WeatherCard({
+  data,
+  isFavorite,
+  onToggleFavorite,
+}: WeatherCardProps) {
   return (
     <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl p-6 border border-white/20">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-semibold text-gray-800">{data.name}</h2>
-          <p className="text-sm text-gray-500">{data.weather[0].description}</p>
         </div>
+
+        <button
+          onClick={() => onToggleFavorite(data.name)}
+          className="text-2xl transition-transform hover:scale-110"
+        >
+          {isFavorite ? "⭐" : "☆"}
+        </button>
 
         <img
           src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
