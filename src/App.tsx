@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import SearchBar from "./components/SearchBar";
 import CardDisplay from "./components/CardDisplay";
+import FavoritesList from "./components/FavoritesList";
 
 import { getWeather } from "./services/weatherAPI";
 
@@ -15,7 +16,7 @@ function App() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { favorites, isFavorite, toggleFavorite } = useFavorites();
 
   const handleSearch = async (city: string) => {
     try {
@@ -38,6 +39,7 @@ function App() {
           Painel do Clima
         </h1>
         <SearchBar onSearch={handleSearch} isLoading={isLoading} />
+        <FavoritesList favorites={favorites} handleSearch={handleSearch} />
         <CardDisplay
           isLoading={isLoading}
           weather={weather}
