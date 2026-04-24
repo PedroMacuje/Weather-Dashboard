@@ -1,5 +1,5 @@
-import { WeatherCard } from "./WeatherCard";
-import { LoadingSkeleton } from "./LoadingSkeleton";
+import WeatherCard from "./WeatherCard";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 import type { WeatherData } from "../types";
 import ErrorMessage from "./ErrorMessage";

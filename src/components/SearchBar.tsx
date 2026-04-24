@@ -5,7 +5,7 @@ interface SearchBarProps {
   isLoading: boolean;
 }
 
-export function SearchBar({ isLoading, onSearch }: SearchBarProps) {
+export default function SearchBar({ isLoading, onSearch }: SearchBarProps) {
   const [city, setCity] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -1,4 +1,4 @@
-export function LoadingSkeleton() {
+export default function LoadingSkeleton() {
   return (
     <div
       className="animate-pulse bg-white-80 backdrop-blur-sm 

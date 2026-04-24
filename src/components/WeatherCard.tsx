@@ -4,7 +4,7 @@ interface WeatherCardProps {
   data: WeatherData;
 }
 
-export function WeatherCard({ data }: WeatherCardProps) {
+export default function WeatherCard({ data }: WeatherCardProps) {
   return (
     <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl p-6 border border-white/20">
       <div className="flex items-center justify-between mb-6">
