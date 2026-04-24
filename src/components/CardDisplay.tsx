@@ -1,8 +1,10 @@
 import WeatherCard from "./WeatherCard";
 import LoadingSkeleton from "./LoadingSkeleton";
+import ErrorMessage from "./ErrorMessage";
+
+import { useFavorites } from "../hooks/useFavorites";
 
 import type { WeatherData } from "../types";
-import ErrorMessage from "./ErrorMessage";
 
 interface CardDisplayProps {
   isLoading: boolean;
@@ -15,11 +17,20 @@ export default function CardDisplay({
   isLoading,
   weather,
 }: CardDisplayProps) {
+  const { toggleFavorite, isFavorite } = useFavorites();
+
   if (isLoading) return <LoadingSkeleton />;
 
   if (error) return <ErrorMessage error={error} />;
 
-  if (weather) return <WeatherCard data={weather} />;
+  if (weather)
+    return (
+      <WeatherCard
+        data={weather}
+        isFavorite={isFavorite(weather.name)}
+        onToggleFavorite={toggleFavorite}
+      />
+    );
 
   return null;
 }
