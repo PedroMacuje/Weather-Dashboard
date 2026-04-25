@@ -14,7 +14,8 @@ export default function FavoritesList({ favorites, handleSearch }: ListProps) {
             <button
               key={city}
               onClick={() => handleSearch(city)}
-              className="px-3 py-1 bg-white/70 backdrop-blur-sm rounded-full text-sm hover:bg-white transition"
+              className="px-3 py-1 bg-white/70 backdrop-blur-sm rounded-full text-sm
+              hover:bg-white hover:scale-105 active:scale-95 transition-all duration-200"
             >
               {city}
             </button>
