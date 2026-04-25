@@ -30,7 +30,8 @@ O projeto permite buscar o clima de qualquer cidade, salvar favoritos e obter au
 
 ## 📸 Preview
 
-<img width="1439" height="860" alt="image" src="https://github.com/user-attachments/assets/bd5c03b9-8570-45be-bc03-0b0a528c0fca" />
+<img width="1447" height="865" alt="image" src="https://github.com/user-attachments/assets/a0d2a5db-07ea-43df-983b-041023fecd59" />
+
 
 ---
 
