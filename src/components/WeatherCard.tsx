@@ -13,7 +13,7 @@ export default function WeatherCard({
 }: WeatherCardProps) {
   return (
     <div
-      className="rounded-2xl bg-white/70 backdrop-blur-md shadow-xl p-6
+      className="rounded-2xl bg-white/30 backdrop-blur-md shadow-xl p-6
                 animate-[fadeIn_0.3s_ease-in-out]"
     >
       <div className="flex items-center justify-between mb-6">
@@ -37,20 +37,20 @@ export default function WeatherCard({
 
       <div className="flex items-center justify-between mb-6">
         <p className="text-5xl font-bold text-gray-900">
-          {Math.round(data.main.temp)}°
+          {Math.round(data.main.temp)}°C
         </p>
 
         <div className="text-right text-sm text-gray-500">
           <p>Sensação</p>
           <p className="text-gray-700 font-medium">
-            {Math.round(data.main.feels_like)}°
+            {Math.round(data.main.feels_like)}°C
           </p>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4 text-sm">
         <div className="bg-white/60 rounded-lg p-3">
-          <p className="text-gray-500">Humidade</p>
+          <p className="text-gray-500">Umidade</p>
           <p className="font-semibold text-gray-800">{data.main.humidity}%</p>
         </div>
 
