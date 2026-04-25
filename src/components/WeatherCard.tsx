@@ -12,7 +12,10 @@ export default function WeatherCard({
   onToggleFavorite,
 }: WeatherCardProps) {
   return (
-    <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl p-6 border border-white/20">
+    <div
+      className="rounded-2xl bg-white/70 backdrop-blur-md shadow-xl p-6
+                animate-[fadeIn_0.3s_ease-in-out]"
+    >
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-semibold text-gray-800">{data.name}</h2>
