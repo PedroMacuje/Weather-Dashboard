@@ -70,8 +70,8 @@ function App() {
         <button
           onClick={handleUserLocation}
           className="w-full py-2 rounded-lg bg-white/70 backdrop-blur-sm 
-             hover:bg-white transition-all duration-200
-             text-gray-700 font-medium"
+            hover:bg-white hover:scale-[1.02] active:scale-[0.98]
+            transition-all duration-200"
         >
           📍 Usar minha localização
         </button>
