@@ -16,7 +16,8 @@ Aplicação web para consulta de clima em tempo real, com interface moderna e re
 - Tratamento de erros
 
 ## 📸 Preview
-<img width="1427" height="865" alt="image" src="https://github.com/user-attachments/assets/cee4647c-aaa9-49f4-b559-1822e20fda4e" />
+<img width="1439" height="860" alt="image" src="https://github.com/user-attachments/assets/bd5c03b9-8570-45be-bc03-0b0a528c0fca" />
+
 
 
 
