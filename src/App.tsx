@@ -59,7 +59,12 @@ function App() {
         >
           📍 Usar minha localização
         </button>
-        {isLocating && <p>Obtendo localização...</p>}
+        {isLocating && (
+          <div className="flex items-center justify-center gap-2 text-gray-500 text-sm">
+            <div className="w-4 h-4 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+            <span>Obtendo localização...</span>
+          </div>
+        )}
         <FavoritesList favorites={favorites} handleSearch={handleSearch} />
         <CardDisplay
           isLoading={isLoading}
