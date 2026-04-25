@@ -23,9 +23,9 @@ export default function SearchBar({ isLoading, onSearch }: SearchBarProps) {
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="Coloque o nome de uma cidade..."
-        className="duration-200 ease-in-out flex-1 p-3 rounded-lg border 
-          border-gray-300 hover:bg-slate-600 focus:outline-none focus:ring-2 
-          focus:ring-blue-500"
+        className="flex-1 p-3 rounded-lg border border-gray-300
+        focus:outline-none focus:ring-2 focus:ring-blue-500
+        transition-all duration-200"
       />
       <button
         type="submit"
