@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-2 px-4">
       <div className="max-w-md mx-auto space-y-4">
         <h1 className="text-gray-700 text-6xl font-bold text-center mb-8">
           Painel do Clima
