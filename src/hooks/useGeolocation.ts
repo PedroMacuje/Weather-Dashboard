@@ -37,4 +37,5 @@ export function useGeolocation() {
       );
     });
   }
+  return { getCurrentWeather, isLocating, error };
 }

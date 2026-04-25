@@ -4,11 +4,12 @@ import SearchBar from "./components/SearchBar";
 import CardDisplay from "./components/CardDisplay";
 import FavoritesList from "./components/FavoritesList";
 
-import { getWeather, getWeatherByCoord } from "./services/weatherAPI";
+import { getWeather } from "./services/weatherAPI";
 
 import type { WeatherData } from "./types";
 
 import { useFavorites } from "./hooks/useFavorites";
+import { useGeolocation } from "./hooks/useGeolocation";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { favorites, isFavorite, toggleFavorite } = useFavorites();
+  const { getCurrentWeather, isLocating, error: geoError } = useGeolocation();
 
   const handleSearch = async (city: string) => {
     try {
@@ -32,32 +34,14 @@ function App() {
     }
   };
 
-  const handleUserLocation = () => {
-    if (!navigator.geolocation) {
-      setError("Geolocalização não é suportada pelo seu navegador");
-      return;
+  const handleUserLocation = async () => {
+    const data = await getCurrentWeather();
+    if (data) {
+      setWeather(data);
+      setError("");
+    } else if (geoError) {
+      setError(geoError);
     }
-
-    setIsLoading(true);
-    setError("");
-
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        try {
-          const { latitude, longitude } = position.coords;
-          const data = await getWeatherByCoord(latitude, longitude);
-          setWeather(data);
-        } catch (error) {
-          setError("Erro ao buscar o clima na sua localização");
-        } finally {
-          setIsLoading(false);
-        }
-      },
-      () => {
-        setError("Permissão de localização negada");
-        setIsLoading(false);
-      },
-    );
   };
 
   return (
@@ -75,6 +59,7 @@ function App() {
         >
           📍 Usar minha localização
         </button>
+        {isLocating && <p>Obtendo localização...</p>}
         <FavoritesList favorites={favorites} handleSearch={handleSearch} />
         <CardDisplay
           isLoading={isLoading}
