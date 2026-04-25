@@ -26,7 +26,7 @@ export default function WeatherCard({
 
         <button
           onClick={() => onToggleFavorite(data.name)}
-          className="text-2xl transition-transform hover:scale-110"
+          className="text-2xl transition-transform duration-200 hover:scale-125 active:scale-95"
         >
           {isFavorite ? "⭐" : "☆"}
         </button>
