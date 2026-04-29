@@ -33,6 +33,8 @@ O projeto permite buscar o clima de qualquer cidade, salvar favoritos e obter au
 <img width="1447" height="865" alt="image" src="https://github.com/user-attachments/assets/a0d2a5db-07ea-43df-983b-041023fecd59" />
 
 
+### Acesse o projeto online [Clicando aqui !](https://astounding-gelato-e6e064.netlify.app/)
+
 ---
 
 ## ⚙️ Como rodar o projeto
